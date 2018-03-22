@@ -6,7 +6,7 @@
 #    By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/19 09:41:23 by schaaban          #+#    #+#              #
-#    Updated: 2018/03/12 14:34:56 by schaaban         ###   ########.fr        #
+#    Updated: 2018/03/19 17:25:20 by schaaban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ MLIB_NAME	=		mlx
 
 CC_INC		=		-I$(INC_DIR) -I$(LFT_I_DIR) -I$(MLIB_I_DIR)
 CC_LINK		=		-L$(LFT_DIR) -l$(LFT_NAME) -L$(MLIB_DIR) -l$(MLIB_NAME) -lm
-CC_MLIB		=		-framework OpenGL -framework AppKit
+CC_MLIB		=		-lXext -lX11
 
 SRCS		=		$(addprefix $(SRCS_DIR)/, 	\
 					main.c						\
@@ -37,7 +37,8 @@ SRCS		=		$(addprefix $(SRCS_DIR)/, 	\
 					exit.c						\
 					graphics.c					\
 					fractal.c					\
-					tools.c						)
+					tools.c						\
+					mouse.c						)
 OBJS		=		$(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 
 COLOR_RED	=	\033[1;31m

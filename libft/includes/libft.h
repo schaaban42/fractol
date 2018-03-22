@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 10:24:21 by schaaban          #+#    #+#             */
-/*   Updated: 2018/02/26 15:18:51 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/03/20 10:08:34 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct 		s_line
 
 int					ft_a2dlen(const void **array);
 int					ft_atoi(const char *str);
+int					ft_colorgradient(double value, int n, ...);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
