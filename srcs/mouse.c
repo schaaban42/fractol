@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 17:18:30 by schaaban          #+#    #+#             */
-/*   Updated: 2018/03/21 18:25:27 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/03/27 00:36:20 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,32 @@ int		mouse_pressed(int keycode, int x, int y, void *param)
 	t_frac *frac;
 
 	frac = (t_frac*)param;
-	x = y;
-	y = x;
-	printf("%d\n", keycode);
-	if (keycode == 1)
+	if (keycode == 1 && frac->actual == FRAC_JULIA)
 		frac->julia_move = !frac->julia_move;
-	if (keycode == 4)
+	if (keycode == 4 && frac->zoom[FRAC] < MAX_ZOOM)
 	{
-		frac->zoom *= 1 / 0.9;
-		frac->max_iterations += 1;
+		if (frac->zoom_at[FRAC])
+		{
+			frac->pt_view[FRAC] += ((double)(x - (WIN_WIDTH / 2)) /
+				(WIN_WIDTH / 2)) * 0.2 / frac->zoom[FRAC];
+			frac->pt_view[FRAC + 1] += ((double)(y - (WIN_HEIGHT / 2)) /
+				(WIN_HEIGHT / 2)) * 0.2 / frac->zoom[FRAC];
+		}
+		frac->zoom[FRAC] *= 1 / 0.9;
+		frac->max_iterations[FRAC] += 2;
 	}
 	if (keycode == 5)
 	{
-		frac->zoom *= 0.9;
-		frac->max_iterations -= (frac->max_iterations <= 30) ? 0 : 1;
+		if (frac->zoom_at[FRAC])
+		{
+			frac->pt_view[FRAC] += ((double)(x - (WIN_WIDTH / 2)) /
+				(WIN_WIDTH / 2)) * 0.2 / frac->zoom[FRAC];
+			frac->pt_view[FRAC + 1] += ((double)(y - (WIN_HEIGHT / 2)) /
+				(WIN_HEIGHT / 2)) * 0.2 / frac->zoom[FRAC];
+		}
+		frac->zoom[FRAC] *= 0.9;
+		frac->max_iterations[FRAC] -=
+			(frac->max_iterations[FRAC] <= MIN_ITERATIONS) ? 0 : 2;
 	}
 	draw_fractal(frac);
 	return (0);

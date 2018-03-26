@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 10:24:21 by schaaban          #+#    #+#             */
-/*   Updated: 2018/03/20 10:08:34 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/03/26 20:36:16 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,11 @@ void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
-void				ft_putstr(char const *s);
-void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
+void				ft_putlong(long n);
+void				ft_putstr(char const *s);
+void				ft_putstr_fd(char const *s, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_strclr(char *s);

@@ -6,7 +6,7 @@
 #    By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/02 12:08:41 by schaaban          #+#    #+#              #
-#    Updated: 2018/03/19 20:43:57 by schaaban         ###   ########.fr        #
+#    Updated: 2018/03/26 20:36:26 by schaaban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ SRCS		=	$(addprefix $(SRCS_DIR)/, 	\
 				ft_putchar.c				\
 				ft_putendl_fd.c				\
 				ft_putendl.c				\
+				ft_putlong.c				\
 				ft_putnbr_fd.c				\
 				ft_putnbr.c					\
 				ft_putstr_fd.c				\

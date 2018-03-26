@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/09 15:10:24 by schaaban          #+#    #+#             */
-/*   Updated: 2018/03/21 00:07:41 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/03/26 19:40:08 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ void	clear_win(int color, t_frac *frac)
 	int		j;
 
 	i = 0;
+	j = 0;
 	while (i < WIN_HEIGHT)
 	{
 		j = 0;
 		while (j < WIN_WIDTH)
 		{
-			ft_put_pixel(j, i, color, frac);
+			frac->mlx_img_s[(i * WIN_WIDTH) + j] = color;
 			j++;
 		}
 		i++;
 	}
-	mlx_put_image_to_window(frac->mlx_core, frac->mlx_win, frac->mlx_img, 0, 0);
 }
