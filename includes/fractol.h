@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/09 12:27:17 by schaaban          #+#    #+#             */
-/*   Updated: 2018/03/27 01:06:15 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/03/27 16:21:55 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "libft.h"
 
 # define WIN_RATIO		(double)0.888888889
-# define WIN_WIDTH		500
+# define WIN_WIDTH		frac->win_width
 # define WIN_HEIGHT		(int)(WIN_WIDTH * WIN_RATIO)
 # define WIN_TITLE		"Fract'ol"
 
@@ -47,6 +47,7 @@ typedef struct	s_frac
 	int		ui;
 	int		zoom_at[FRAC_COUNT * 3];
 	int		rgb[FRAC_COUNT * 3];
+	int		win_width;
 	double	zoom[FRAC_COUNT * 3];
 	double	pt_view[FRAC_COUNT * 3];
 	double	pt_size[FRAC_COUNT * 3];

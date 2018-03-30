@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 11:18:28 by schaaban          #+#    #+#             */
-/*   Updated: 2018/03/27 01:07:04 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/03/27 16:30:37 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	init_frac(t_frac *frac, int f)
 
 void	ft_init(t_frac *frac, int argc, char **argv)
 {
-	if (argc != 2)
+	if (argc != 2 && argc != 3)
 		error_handler(0, frac);
 	if (ft_strequ(argv[1], "mandle"))
 		frac->actual = FRAC_MANDLE;
@@ -42,7 +42,14 @@ void	ft_init(t_frac *frac, int argc, char **argv)
 	else if (ft_strequ(argv[1], "mandle3"))
 		frac->actual = FRAC_M3;
 	else
-		error_handler(1, frac);
+		error_handler(0, frac);
+	frac->win_width = 400;
+	if (argc == 3)
+	{
+		if (!ft_str_isdigit(argv[2]))
+			error_handler(0, frac);
+		frac->win_width = (ft_atoi(argv[2]) > 80) ? ft_atoi(argv[2]) : 80;
+	}
 	init_frac(frac, FRAC_MANDLE);
 	init_frac(frac, FRAC_JULIA);
 	init_frac(frac, FRAC_BSHIP);
