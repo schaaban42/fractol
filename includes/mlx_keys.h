@@ -6,13 +6,13 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 12:18:42 by schaaban          #+#    #+#             */
-/*   Updated: 2018/03/26 18:42:58 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/04/04 14:05:01 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MLX_KEYS_H
 # define MLX_KEYS_H
-# define LINUX
+# define MACOS
 
 # ifdef LINUX
 
@@ -64,8 +64,11 @@
 #  define KEY_DOWN			65364
 #  define KEY_UP			65362
 
-# elif MACOS
+# endif
 
+# ifdef MACOS
+
+#  define KEY_ESC			53
 #  define KEY_A				0
 #  define KEY_S				1
 #  define KEY_D				2
@@ -106,12 +109,13 @@
 #  define KEY_N				45
 #  define KEY_M				46
 #  define KEY_TAB			48
-#  define KEY_PLUS			69
-#  define KEY_MINUS			78
+#  define KEY_PLUS			24
+#  define KEY_MINUS			27
 #  define KEY_LEFT			123
 #  define KEY_RIGHT			124
 #  define KEY_DOWN			125
 #  define KEY_UP			126
 
 # endif
+
 #endif

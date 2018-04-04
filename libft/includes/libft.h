@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 10:24:21 by schaaban          #+#    #+#             */
-/*   Updated: 2018/03/26 20:36:16 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/04/04 13:39:01 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <string.h>
 # include <stdarg.h>
 
-# define FT_ABS(x) (x < 0 ? -x : x)
 # define BUFF_SIZE	1000
 
 typedef struct		s_list
@@ -26,7 +25,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef struct 		s_line
+typedef struct		s_line
 {
 	int				fd;
 	char			*content;

@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 20:43:04 by schaaban          #+#    #+#             */
-/*   Updated: 2018/03/20 14:06:15 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/04/04 13:38:40 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int			ft_colorgradient(double value, int n, ...)
 		if ((int)(value * (n - 1)) == i)
 		{
 			new = va_arg(args, int);
-			return (color_gradient(last, new, 
+			return (color_gradient(last, new,
 				(value - ((1.0 / (double)(n - 1)) * i)) * (n - 1)));
 		}
 		i++;

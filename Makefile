@@ -6,7 +6,7 @@
 #    By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/19 09:41:23 by schaaban          #+#    #+#              #
-#    Updated: 2018/03/27 01:06:24 by schaaban         ###   ########.fr        #
+#    Updated: 2018/04/04 13:43:22 by schaaban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ MLIB_NAME	=		mlx
 
 CC_INC		=		-I$(INC_DIR) -I$(LFT_I_DIR) -I$(MLIB_I_DIR)
 CC_LINK		=		-L$(LFT_DIR) -l$(LFT_NAME) -L$(MLIB_DIR) -l$(MLIB_NAME)
-CC_MLIB		=		-lXext -lX11
+CC_MLIB		=		-framework OpenGL -framework AppKit
 
 SRCS		=		$(addprefix $(SRCS_DIR)/, 	\
 					main.c						\
@@ -58,7 +58,7 @@ $(NAME): dir_creation $(OBJS)
 	@$(CC) $(FLAGS) $(OBJS) $(CC_INC) $(CC_LINK) $(CC_MLIB) -o $(NAME)
 	@echo "$(COLOR_BLUE)FRACT'OL - $(COLOR_GREEN)Done !$(COLOR_WHITE)"
 
-$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c $(INC_DIR)/$(NAME).h
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c $(INC_DIR)/$(NAME).h $(INC_DIR)/mlx_keys.h
 	@$(CC) $(FLAGS) $(CC_INC) -o $@ -c $<
 
 dir_creation:

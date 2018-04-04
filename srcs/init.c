@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 11:18:28 by schaaban          #+#    #+#             */
-/*   Updated: 2018/03/27 16:30:37 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/04/04 16:34:49 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ void	ft_init(t_frac *frac, int argc, char **argv)
 		frac->actual = FRAC_M3;
 	else
 		error_handler(0, frac);
-	frac->win_width = 400;
 	if (argc == 3)
 	{
 		if (!ft_str_isdigit(argv[2]))
 			error_handler(0, frac);
 		frac->win_width = (ft_atoi(argv[2]) > 80) ? ft_atoi(argv[2]) : 80;
+		frac->win_width = (frac->win_width > 1200) ? 1200 : frac->win_width;
 	}
 	init_frac(frac, FRAC_MANDLE);
 	init_frac(frac, FRAC_JULIA);
@@ -57,4 +57,3 @@ void	ft_init(t_frac *frac, int argc, char **argv)
 	frac->julia_move = 1;
 	frac->ui = 0;
 }
-

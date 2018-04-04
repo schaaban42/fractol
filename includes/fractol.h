@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/09 12:27:17 by schaaban          #+#    #+#             */
-/*   Updated: 2018/03/27 16:21:55 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/04/04 16:24:53 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FRACTOL_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
 # include "mlx.h"
 # include "libft.h"

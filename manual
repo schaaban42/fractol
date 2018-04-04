@@ -1,0 +1,18 @@
+/******* FRACT'OL MANUAL *******\
+
+Weclome to fract'ol !
+
+Available fractals : mandlebrot, julia, burning ship and mandlebrot with z^3
+Launch with : ./fractol fractal_name [mandle|julia|bship|mandle3] (optional:win_width)
+
+Moving : Arrows
+Zooming : Mouse wheel
+R,G,B values : T,Y,U keys for + and G,H,J for -
+Reset : R
+Next fractal : C
+Julia set modifier : Mouse motion
+Switch UI : Tab
+Switch "follow cursor" : Z
+Switch julia set modifier lock : Mouse left button
+
+Enjoy fractals :) !

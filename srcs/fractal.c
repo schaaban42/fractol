@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/09 15:20:09 by schaaban          #+#    #+#             */
-/*   Updated: 2018/03/26 19:38:26 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/04/04 13:37:22 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static void		draw_mandlebrot(int x, int y, t_frac *frac)
 	double	tmp;
 	int		i;
 
-	c[FRAC] = (frac->pt_size[FRAC] * (x - WIN_WIDTH / 2) / 
+	c[FRAC] = (frac->pt_size[FRAC] * (x - WIN_WIDTH / 2) /
 		(frac->zoom[FRAC] * WIN_WIDTH * 0.5)) + frac->pt_view[FRAC];
-	c[FRAC + 1] = (frac->pt_size[FRAC + 1] * (y - WIN_HEIGHT / 2) / 
+	c[FRAC + 1] = (frac->pt_size[FRAC + 1] * (y - WIN_HEIGHT / 2) /
 		(frac->zoom[FRAC] * WIN_HEIGHT * -0.5)) - frac->pt_view[FRAC + 1];
 	z[FRAC] = 0.0f;
 	z[FRAC + 1] = 0.0f;
@@ -34,8 +34,8 @@ static void		draw_mandlebrot(int x, int y, t_frac *frac)
 		z[FRAC + 1] = 2 * tmp * z[FRAC + 1] + c[FRAC + 1];
 	}
 	if (i < frac->max_iterations[FRAC])
-		ft_put_pixel(x, y, ((i * frac->rgb[FRAC]) % 256) << 16 | 
-			((i * frac->rgb[FRAC + 1]) % 256) << 8 | 
+		ft_put_pixel(x, y, ((i * frac->rgb[FRAC]) % 256) << 16 |
+			((i * frac->rgb[FRAC + 1]) % 256) << 8 |
 			((i * frac->rgb[FRAC + 2]) % 256) << 0, frac);
 }
 
@@ -45,9 +45,9 @@ static void		draw_julia(int x, int y, t_frac *frac)
 	double	tmp;
 	int		i;
 
-	c[FRAC] = (frac->pt_size[FRAC] * (x - WIN_WIDTH / 2) / 
+	c[FRAC] = (frac->pt_size[FRAC] * (x - WIN_WIDTH / 2) /
 		(frac->zoom[FRAC] * WIN_WIDTH * 0.5)) + frac->pt_view[FRAC];
-	c[FRAC + 1] = (frac->pt_size[FRAC + 1] * (y - WIN_HEIGHT / 2) / 
+	c[FRAC + 1] = (frac->pt_size[FRAC + 1] * (y - WIN_HEIGHT / 2) /
 		(frac->zoom[FRAC] * WIN_HEIGHT * -0.5)) - frac->pt_view[FRAC + 1];
 	i = 0;
 	while (c[FRAC] * c[FRAC] + c[FRAC + 1] * c[FRAC + 1] < 4 &&
@@ -59,8 +59,8 @@ static void		draw_julia(int x, int y, t_frac *frac)
 		c[FRAC + 1] = 2 * tmp * c[FRAC + 1] + frac->julia[1];
 	}
 	if (i < frac->max_iterations[FRAC])
-		ft_put_pixel(x, y, ((i * frac->rgb[FRAC]) % 256) << 16 | 
-			((i * frac->rgb[FRAC + 1]) % 256) << 8 | 
+		ft_put_pixel(x, y, ((i * frac->rgb[FRAC]) % 256) << 16 |
+			((i * frac->rgb[FRAC + 1]) % 256) << 8 |
 			((i * frac->rgb[FRAC + 2]) % 256) << 0, frac);
 }
 
@@ -71,9 +71,9 @@ static void		draw_burningship(int x, int y, t_frac *frac)
 	double	tmp;
 	int		i;
 
-	c[FRAC] = (frac->pt_size[FRAC] * (x - WIN_WIDTH / 2) / 
+	c[FRAC] = (frac->pt_size[FRAC] * (x - WIN_WIDTH / 2) /
 		(frac->zoom[FRAC] * WIN_WIDTH * 0.5)) + frac->pt_view[FRAC];
-	c[FRAC + 1] = (frac->pt_size[FRAC + 1] * (y - WIN_HEIGHT / 2) / 
+	c[FRAC + 1] = (frac->pt_size[FRAC + 1] * (y - WIN_HEIGHT / 2) /
 		(frac->zoom[FRAC] * WIN_HEIGHT * 0.5)) + frac->pt_view[FRAC + 1];
 	z[FRAC] = 0.0f;
 	z[FRAC + 1] = 0.0f;
@@ -87,8 +87,8 @@ static void		draw_burningship(int x, int y, t_frac *frac)
 		z[FRAC + 1] = 2 * ft_abs(tmp) * ft_abs(z[FRAC + 1]) + c[FRAC + 1];
 	}
 	if (i < frac->max_iterations[FRAC])
-		ft_put_pixel(x, y, ((i * frac->rgb[FRAC]) % 256) << 16 | 
-			((i * frac->rgb[FRAC + 1]) % 256) << 8 | 
+		ft_put_pixel(x, y, ((i * frac->rgb[FRAC]) % 256) << 16 |
+			((i * frac->rgb[FRAC + 1]) % 256) << 8 |
 			((i * frac->rgb[FRAC + 2]) % 256) << 0, frac);
 }
 
@@ -99,9 +99,9 @@ static void		draw_mandle3(int x, int y, t_frac *frac)
 	double	tmp;
 	int		i;
 
-	c[FRAC] = (frac->pt_size[FRAC] * (x - WIN_WIDTH / 2) / 
+	c[FRAC] = (frac->pt_size[FRAC] * (x - WIN_WIDTH / 2) /
 		(frac->zoom[FRAC] * WIN_WIDTH * 0.5)) + frac->pt_view[FRAC];
-	c[FRAC + 1] = (frac->pt_size[FRAC + 1] * (y - WIN_HEIGHT / 2) / 
+	c[FRAC + 1] = (frac->pt_size[FRAC + 1] * (y - WIN_HEIGHT / 2) /
 		(frac->zoom[FRAC] * WIN_HEIGHT * 0.5)) + frac->pt_view[FRAC + 1];
 	z[FRAC] = 0.0f;
 	z[FRAC + 1] = 0.0f;
@@ -116,8 +116,8 @@ static void		draw_mandle3(int x, int y, t_frac *frac)
 			(z[FRAC + 1] * z[FRAC + 1] * z[FRAC + 1]) + c[FRAC + 1];
 	}
 	if (i < frac->max_iterations[FRAC])
-		ft_put_pixel(x, y, ((i * frac->rgb[FRAC]) % 256) << 16 | 
-			((i * frac->rgb[FRAC + 1]) % 256) << 8 | 
+		ft_put_pixel(x, y, ((i * frac->rgb[FRAC]) % 256) << 16 |
+			((i * frac->rgb[FRAC + 1]) % 256) << 8 |
 			((i * frac->rgb[FRAC + 2]) % 256) << 0, frac);
 }
 
