@@ -6,7 +6,7 @@
 /*   By: schaaban <schaaban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/09 12:55:38 by schaaban          #+#    #+#             */
-/*   Updated: 2018/04/04 14:07:30 by schaaban         ###   ########.fr       */
+/*   Updated: 2018/04/04 17:38:19 by schaaban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,9 @@ int			key_pressed(int keycode, void *param)
 	if (keycode == KEY_PLUS)
 		frac->max_iterations[FRAC] += 10;
 	if (keycode == KEY_MINUS)
-		frac->max_iterations[FRAC] -=
-			(frac->max_iterations[FRAC] <= MIN_ITERATIONS) ? 0 : 10;
+		frac->max_iterations[FRAC] =
+			(frac->max_iterations[FRAC] - 10 < MIN_ITERATIONS) ?
+				MIN_ITERATIONS : (frac->max_iterations[FRAC] - 10);
 	if (keycode == KEY_R)
 		init_frac(frac, FRAC);
 	if (keycode == KEY_TAB)
